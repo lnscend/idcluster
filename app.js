@@ -18,12 +18,11 @@ app.post('/submit', (req, res) => {
   const { barcodeData, userLocation } = req.body;
 
   // Logic to check if location is within the desired radius
-  const desiredRadius = 100; // Example: 100 meters
+  const desiredRadius = 3000; // Example: 100 meters
   const userLat = parseFloat(userLocation.lat);
   const userLng = parseFloat(userLocation.lng);
-  const targetLat = 40.730610; // Example target location latitude
-  const targetLng = -73.935242; // Example target location longitude
-
+  const targetLat = 1.32908; // Example target location latitude
+  const targetLng = 103.76295; // Example target location longitude
   const distance = getDistanceFromLatLonInMeters(targetLat, targetLng, userLat, userLng);
 
   if (distance <= desiredRadius) {
