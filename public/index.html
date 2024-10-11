@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permission App</title>
+</head>
+<body>
+  <h1>Please allow location and camera permissions for verification purposes</h1>
+  
+  <div id="error-message" style="color: red;"></div>
+  
+  <div id="video-container" style="display: none;">
+    <video id="preview" width="300" height="300"></video>
+  </div>
+
+  <form id="barcode-form" action="/submit" method="POST" style="display: none;">
+    <input type="hidden" name="barcodeData" id="barcodeData">
+    <input type="hidden" name="userLocation" id="userLocation">
+    <button type="submit">Submit Barcode</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
