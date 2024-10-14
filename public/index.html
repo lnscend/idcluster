@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Permission App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Scanner</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Please allow location and camera permissions for verification purposes</h1>
-  
-  <div id="error-message" style="color: red;"></div>
-  
-  <div id="video-container" style="display: none;">
-    <video id="preview" width="300" height="300"></video>
-  </div>
+    <div class="container">
+        <h1>Scan Barcode</h1>
+        <button id="scan-button">Click to Scan</button>
+        <video id="video" autoplay muted playsinline></video>
+        <p id="barcode-result">Waiting for barcode...</p>
+    </div>
 
-  <form id="barcode-form" action="/submit" method="POST" style="display: none;">
-    <input type="hidden" name="barcodeData" id="barcodeData">
-    <input type="hidden" name="userLocation" id="userLocation">
-    <button type="submit">Submit Barcode</button>
-  </form>
-
-  <script src="script.js"></script>
+    <script src="quagga.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
